@@ -65,10 +65,10 @@ G33_genesum_qtl <- scan1(genoprobs = probs, pheno = G33_related_genes_df[,3,drop
 for(z in 1:length(G33_genesum_qtl))
 {
   print(z)
-  if(G33_genesum_qtl[z] < 6){
+  if(G33_genesum_qtl[z] < 8){
     G33_genesum_qtl[z] = 0
   }
-  if(G33_genesum_qtl[z] >= 6){
+  if(G33_genesum_qtl[z] >= 8){
     G33_genesum_qtl[z] = 1
     # threshold is set to 6
   }
@@ -82,10 +82,10 @@ for(i in 4:ncol(G33_related_genes_df))
                         kinship = K, addcovar = addcovar, cores = 4, reml = TRUE)
   for(z in 1:length(G33_gene_qtl))
   {
-    if(G33_gene_qtl[z] < 6){
+    if(G33_gene_qtl[z] < 8){
       G33_gene_qtl[z] = 0
     }
-    if(G33_gene_qtl[z] >= 6){
+    if(G33_gene_qtl[z] >= 8){
       G33_gene_qtl[z] = 1
     }
   }
@@ -93,6 +93,7 @@ for(i in 4:ncol(G33_related_genes_df))
 }
 
 # plot the scan
+quartz()
 plot_scan1(x = G33_genesum_qtl, map = map, lodcolumn = 1, main = "Associated gene expression traits for G33 Ins. Sec. | Threshold = 6")
 
 
