@@ -9,10 +9,13 @@ setwd("/Users/s-ishimt/Desktop/Academic_Internship/DO_qtl")
 
 # load data file
 load("Data/Attie_islet_secr_data_v1.Rdata")
+<<<<<<< HEAD
 load("Data/pheno_clin_v6.RData")
 pheno = pheno_clin
 pheno_dict = pheno_clin_dict
 rm(pheno_clin, pheno_clin_dict)
+=======
+>>>>>>> cf59327ef1884d2eae4729d9e8d5d2772e79e36c
 
 # initialize phenotypes vector
 phenotypes = c("num_islets",
@@ -68,7 +71,10 @@ scatterplots = read.csv("Plots/2018_01_17/scatterplots.csv", stringsAsFactors = 
 pdf(file = "Plots/2018_01_17/ins_sec_scatterplots.pdf", width = 5, height = 5)
 for(i in 1:nrow(scatterplots))
 {
+<<<<<<< HEAD
   quartz()
+=======
+>>>>>>> cf59327ef1884d2eae4729d9e8d5d2772e79e36c
   xname = scatterplots$X[i]
   yname = scatterplots$Y[i]
   x = log(pheno[,xname])
